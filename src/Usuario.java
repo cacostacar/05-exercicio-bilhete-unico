@@ -9,4 +9,6 @@ public class Usuario {
             this.perfil = perfil;
     }
 
+
+
 }//public class

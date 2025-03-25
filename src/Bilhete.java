@@ -11,7 +11,6 @@ public class Bilhete {
         Random rd = new Random();
         this.numero = rd.nextInt(1000, 10000);
         this.usuario = usuario;
-
     }
 
     //Método para carregar o bilhete
@@ -32,13 +31,10 @@ public class Bilhete {
         if (usuario.perfil.equalsIgnoreCase("comum")) {
             debito = tarifaBase;
         }
-
         if (saldo >= debito) {
             saldo -= debito;
             return "Passagem Liberada";
         }
-
         return "Saldo Insuficiente";
-
     }//public string
 }
