@@ -40,7 +40,7 @@ public class Util {
     }
 
 
-    // método para exibir o menu do administrador
+    // método para exibir o menu do administrador (adicionar as informações no menuAdm)
     private void menuAdministrador() {
         int opcao;
         String menu = "1. Emitir bilhete\n2. Listar bilhete\n3. Remover bilhete\n4. Sair do administrador";
@@ -56,6 +56,9 @@ public class Util {
                         break;
                     case 2:
                         listarBilhetes();
+                        break;
+                    case 3:
+                        removerBilhete();
                         break;
                 }
             }
@@ -114,6 +117,7 @@ public class Util {
                     case 3:
                         passarNaCatraca();
                         break;
+
                 }
             }
         } while (opcao != 4);
@@ -162,4 +166,23 @@ public class Util {
         showMessageDialog(null, cpf + "não encontrado");
         return posicao;
     }
+
+    // método para remover um bilhete a partir de um cpf (void não retorna valor) (usar o pesquisar)
+    public void removerBilhete() {
+        int resposta;
+        int posicao = pesquisar();
+
+        if (posicao != -1) {
+            resposta = showConfirmDialog(null, "Tem certeza que deseja remover o bilhete?");
+            if (resposta == YES_OPTION) {
+                bilhete[posicao] = bilhete[index - 1];
+                index--;
+            }
+
+        }
+    }
+
+
+
 }
+
